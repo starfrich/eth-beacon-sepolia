@@ -9,6 +9,15 @@ These are the recommended specifications for running a Sepolia node:
 - Storage: 1 TB SSD (recommended)
 - Internet: Stable connection with at least 10 Mbps
 
+### 🖥️ Recommended VDS & Dedicated Server Providers
+
+If you need to purchase a dedicated server, here are some recommended providers:
+
+1. [FiberState](https://billing.fiberstate.com/aff.php?aff=175)
+2. [Servarica](https://clients.servarica.com/aff.php?aff=973)
+
+---
+
 ## 1. Installing Dependencies
 First, we need to install all the necessary system packages and dependencies:
 
