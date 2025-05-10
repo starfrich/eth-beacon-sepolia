@@ -149,7 +149,7 @@ Group=ethereum
 Type=simple
 Restart=always
 RestartSec=5
-ExecStart=/usr/local/bin/prysm --datadir=/data/prysm --sepolia \
+ExecStart=/usr/bin/prysm --datadir=/data/prysm --sepolia \
   --execution-endpoint=http://localhost:8551 \
   --rpc-host=0.0.0.0 --rpc-port=4000 \
   --grpc-gateway-host=0.0.0.0 --grpc-gateway-port=3500 \
