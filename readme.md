@@ -204,6 +204,30 @@ sudo journalctl -fu geth
 sudo journalctl -fu prysm
 ```
 
+# Check Sync Status GETH
+```bash
+curl -s -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' \
+-H "Content-Type: application/json" http://localhost:8545 | jq
+```
+
+Output your GETH is synced:
+![Image](https://github.com/user-attachments/assets/20a6eadb-9beb-4d1a-9cf7-751dc3359f54)
+
+
+# Check Sync Status Prysm
+```bash
+curl -s http://localhost:3500/eth/v1/node/syncing | jq
+```
+
+Output your Prysm is synced:
+![Image](https://github.com/user-attachments/assets/672ea81d-f8cc-4734-a27f-f6ab976bad54)
+
+
+# Notes:
+- Fully sync took more than 3 hours on a 1Gbps port speed.
+- It might be less if you have a 10Gbps port speed.
+- Storage used(11/05/2025) around 627 GB.
+
 ## 9. RPC Endpoints
 Once both services are running and synced, you can use the following RPC endpoints:
 
