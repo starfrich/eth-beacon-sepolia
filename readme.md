@@ -211,6 +211,7 @@ curl -s -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id"
 ```
 
 Output your GETH is synced:
+
 ![Image](https://github.com/user-attachments/assets/20a6eadb-9beb-4d1a-9cf7-751dc3359f54)
 
 
@@ -220,6 +221,7 @@ curl -s http://localhost:3500/eth/v1/node/syncing | jq
 ```
 
 Output your Prysm is synced:
+
 ![Image](https://github.com/user-attachments/assets/672ea81d-f8cc-4734-a27f-f6ab976bad54)
 
 
