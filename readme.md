@@ -127,7 +127,7 @@ Restart=always
 RestartSec=5
 ExecStart=/usr/bin/geth --sepolia --datadir /data/geth-sepolia \
   --http --http.addr "0.0.0.0" --http.port 8545 \
-  --http.api "eth,net,web3,personal,engine" \
+  --http.api "eth,net,web3" \
   --authrpc.addr "127.0.0.1" --authrpc.port 8551 \
   --authrpc.jwtsecret /data/jwt.hex \
   --http.corsdomain "*" \
