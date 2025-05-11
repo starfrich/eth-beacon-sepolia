@@ -167,7 +167,7 @@ ExecStart=/usr/bin/prysm --datadir=/data/prysm --sepolia \
   --genesis-beacon-api-url=https://lodestar-sepolia.chainsafe.io \
   --checkpoint-sync-url=https://sepolia.checkpoint-sync.ethpandaops.io \
   --accept-terms-of-use \
-  --http-modules=beacon,config,node,validator
+  --http-modules=beacon,config,node
 
 [Install]
 WantedBy=multi-user.target
