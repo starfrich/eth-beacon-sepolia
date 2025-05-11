@@ -266,20 +266,39 @@ sudo ufw default allow outgoing
 # SSH (critical)
 sudo ufw allow 22/tcp
 
-# Web (Nginx)
-sudo ufw allow 80/tcp
-sudo ufw allow 443/tcp
+# GETH + Prysm for Docker local use
+# GETH via docker0
+sudo ufw allow in on docker0 to any port 8545 proto tcp
+sudo ufw allow in on docker0 to any port 30303 proto tcp
+sudo ufw allow in on docker0 to any port 30303 proto udp
 
-# Geth
-sudo ufw allow 8545/tcp
-sudo ufw allow 30303/tcp
-sudo ufw allow 30303/udp
+# Prysm via docker0
+sudo ufw allow in on docker0 to any port 3500 proto tcp
+sudo ufw allow in on docker0 to any port 4000 proto tcp
+sudo ufw allow in on docker0 to any port 13000 proto tcp
+sudo ufw allow in on docker0 to any port 12000 proto udp
 
-# Prysm
-sudo ufw allow 4000/tcp
-sudo ufw allow 3500/tcp
-sudo ufw allow 13000/tcp
-sudo ufw allow 12000/udp
+# Specific external IP access
+# Replace 123.123.123.123 with your trusted IP
+sudo ufw allow from 123.123.123.123 to any port 8545 proto tcp
+sudo ufw allow from 123.123.123.123 to any port 30303 proto tcp
+sudo ufw allow from 123.123.123.123 to any port 30303 proto udp
+
+sudo ufw allow from 123.123.123.123 to any port 3500 proto tcp
+sudo ufw allow from 123.123.123.123 to any port 4000 proto tcp
+sudo ufw allow from 123.123.123.123 to any port 13000 proto tcp
+sudo ufw allow from 123.123.123.123 to any port 12000 proto udp
+
+# Specific subnet access
+# Replace 123.123.0.0/16 with your trusted subnet
+sudo ufw allow from 123.123.0.0/16 to any port 8545 proto tcp
+sudo ufw allow from 123.123.0.0/16 to any port 30303 proto tcp
+sudo ufw allow from 123.123.0.0/16 to any port 30303 proto udp
+
+sudo ufw allow from 123.123.0.0/16 to any port 3500 proto tcp
+sudo ufw allow from 123.123.0.0/16 to any port 4000 proto tcp
+sudo ufw allow from 123.123.0.0/16 to any port 13000 proto tcp
+sudo ufw allow from 123.123.0.0/16 to any port 12000 proto udp
 
 # Enable UFW
 sudo ufw enable
@@ -288,6 +307,7 @@ sudo ufw enable
 sudo ufw status verbose
 ```
 
+- Specific IP and Specific with subnet need to provider real IP, dont just copy and paste
 - Use strong passwords for your system
 - Keep your software updated regularly
 - Consider setting up TLS/SSL for secure connections to your RPC endpoints
