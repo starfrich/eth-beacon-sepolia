@@ -18,7 +18,7 @@ If you need to purchase a dedicated server, here are some recommended providers:
 
 ---
 
-## RPC As Services
+## RPC
 
 Most free RPC services have limitations, but don't worry, we've got you covered. At just $20/month, it's much cheaper than other providers that can charge more. DM me on Telegram @starfishprerich, and we can work something out.
 
