@@ -137,7 +137,11 @@ ExecStart=/usr/bin/geth --sepolia --datadir /data/geth-sepolia \
   --authrpc.addr "127.0.0.1" --authrpc.port 8551 \
   --authrpc.jwtsecret /data/jwt.hex \
   --http.corsdomain "*" \
-  --http.vhosts "*"
+  --http.vhosts "*"\
+  --cache=2048 \
+  --syncmode snap
+MemoryLimit=8G
+MemorySwapMax=0
 
 [Install]
 WantedBy=multi-user.target
@@ -173,7 +177,11 @@ ExecStart=/usr/bin/prysm --datadir=/data/prysm --sepolia \
   --genesis-beacon-api-url=https://lodestar-sepolia.chainsafe.io \
   --checkpoint-sync-url=https://sepolia.checkpoint-sync.ethpandaops.io \
   --accept-terms-of-use \
-  --http-modules=beacon,config,node
+  --http-modules=beacon,config,node \
+  --min-sync-peers=1
+MemoryLimit=10G
+MemoryHigh=8G
+MemorySwapMax=0
 
 [Install]
 WantedBy=multi-user.target
