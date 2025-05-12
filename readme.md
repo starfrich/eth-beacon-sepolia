@@ -20,11 +20,17 @@ If you need to purchase a dedicated server, here are some recommended providers:
 
 ## RPC
 
-Most free RPC services have limitations, but don't worry, we've got you covered. At just $20/month, it's much cheaper than other providers that can charge more. DM me on Telegram [starfish](https://t.me/starfishprerich) OR [robapuros](https://t.me/Robapuros), and we can work something out.
+Most free RPC services have limitations — but don’t worry, we’ve got you covered. At just **$20/month** (promo for the first **5 slots filled**), it’s way cheaper than other providers who charge much more.
 
-> $20/month is per IP, meaning $20 for 1 IP for 1 month.
+DM me on Telegram: [starfish](https://t.me/starfishprerich) or [robapuros](https://t.me/Robapuros) and we’ll work something out.
 
-> We can only cover ~5~ ~4~ 3 ip for now.
+> **$20/month per IP** — meaning $20 for 1 IP for 1 month.  
+> This is a **promo price**. Once the 5 slots are filled, you’ll need to wait **3–7 days** for the next available RPC. And the price will go up to **$30/month per IP**.
+
+> **Current availability:** ~5~ ~4~ **3 IPs left**
+
+> 📌 **First Come, First Served** — no booking system. Whoever confirms payment first, gets the slot.
+
 
 ---
 
