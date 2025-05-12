@@ -220,7 +220,7 @@ sudo journalctl -fu geth
 sudo journalctl -fu prysm
 ```
 
-# Check Sync Status GETH
+### Check Sync Status GETH
 ```bash
 curl -s -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' \
 -H "Content-Type: application/json" http://localhost:8545 | jq
@@ -231,7 +231,7 @@ Output your GETH is synced:
 ![Image](https://github.com/user-attachments/assets/20a6eadb-9beb-4d1a-9cf7-751dc3359f54)
 
 
-# Check Sync Status Prysm
+### Check Sync Status Prysm
 ```bash
 curl -s http://localhost:3500/eth/v1/node/syncing | jq
 ```
@@ -239,12 +239,6 @@ curl -s http://localhost:3500/eth/v1/node/syncing | jq
 Output your Prysm is synced:
 
 ![Image](https://github.com/user-attachments/assets/672ea81d-f8cc-4734-a27f-f6ab976bad54)
-
-
-# Notes:
-- Fully sync took more than 3 hours on a 1Gbps port speed.
-- It might be less if you have a 10Gbps port speed.
-- Storage used(11/05/2025) around 627 GB.
 
 ## 9. RPC Endpoints
 Once both services are running and synced, you can use the following RPC endpoints:
@@ -318,6 +312,45 @@ sudo ufw status verbose
 - Keep your software updated regularly
 - Consider setting up TLS/SSL for secure connections to your RPC endpoints
 > Nginx + Cloudflare Proxied + Certbot
+
+---
+
+# 📖 FAQ: Sepolia Node (Geth + Prysm)
+
+## ❓ What's the pruning mechanism for Sepolia and Prysm data?
+
+- **Geth (Execution Client)**  
+  Uses the default pruning mechanism (`gcmode=full`), which keeps only the latest state trie and automatically prunes old state data to save disk space.
+
+- **Prysm (Consensus Client)**  
+  No manual pruning method. Prysm automatically manages finalized state and retains only the necessary data required for consensus, discarding finalized data as per Ethereum consensus rules.
+
+---
+
+## ❓ Is there any limitation for RPC requests?
+
+By default, **there’s no limitation**. However:
+
+- If you enable **UFW (firewall)** on your server, you must **whitelist your friends' IP addresses** so only they can access your RPC endpoint.
+- If you don’t enable UFW, your RPC endpoint will be **open to the public**, meaning anyone who discovers it can freely access it.
+
+**Recommendation:** Always secure your RPC endpoint with a firewall or IP whitelist to prevent abuse.
+
+---
+
+## ❓ How long does a full sync take?
+
+On a **1Gbps port speed**, a full sync typically takes **more than 3 hours**.  
+It might be faster if you're using a **10Gbps port**.
+
+---
+
+## ❓ How much storage is currently used by this node setup?
+
+As of **12/05/2025**, the total storage usage for a fully synced Sepolia node (Geth + Prysm) is approximately **637GB**.
+
+---
+
 
 # Discussion
 
