@@ -24,7 +24,7 @@ Most free RPC services have limitations, but don't worry, we've got you covered.
 
 > $20/month is per IP, meaning $20 for 1 IP for 1 month.
 
-> We can only cover 5 ip for now.
+> We can only cover ~5~ 4 ip for now.
 
 ---
 
