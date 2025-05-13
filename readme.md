@@ -24,12 +24,13 @@ Most free RPC services have limitations — but don’t worry, we’ve got you c
 
 DM me on Telegram: [starfish](https://t.me/starfishprerich) or [robapuros](https://t.me/Robapuros) and we’ll work something out.
 
-> **$20/month per IP** — meaning $20 for 1 IP for 1 month.  
-> This is a **promo price**. Once the 5 slots are filled, you’ll need to wait **3–7 days** for the next available RPC. And the price will go up to **$30/month per IP**.
+> **$20/month per IP** — meaning $20 for 1 IP for 1 month. 
+ 
+> This is a **promo price**. Once the 5 slots are filled, you’ll need to wait **3–7 days** for the next available RPC. And the price will not same anymore.
 
-> **Current availability:** ~5~ ~4~ **3 IPs left**
+> **Current availability:** ~5~ ~4~ ~3~ **2 IPs left**
 
-> 📌 **First Come, First Served** — no booking system. Whoever confirms payment first, gets the slot. -->
+> 📌 **First Come, First Served** — no booking system. Whoever confirms payment first, gets the slot. 
 
 
 ---
