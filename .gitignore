@@ -1,4 +1,4 @@
-example*
+example-nginx*
 geth*
 prysm*
-docker*
+docker-compose.yml

@@ -1,0 +1,71 @@
+services:
+  geth:
+    image: ethereum/client-go:v1.15.11
+    container_name: geth-sepolia
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8545:8545"    # HTTP RPC
+      - "30303:30303"  # P2P TCP
+      - "30303:30303/udp"  # P2P UDP       
+    volumes:
+      - ./data/geth-sepolia:/root/.ethereum
+      - ./data/jwt.hex:/root/jwt.hex
+    command: >
+      --sepolia
+      --http
+      --http.addr "0.0.0.0"
+      --http.port 8545
+      --http.api "eth,net,web3"
+      --http.corsdomain "*"
+      --http.vhosts "*"
+      --authrpc.addr "0.0.0.0"
+      --authrpc.port 8551
+      --authrpc.vhosts "*"
+      --authrpc.jwtsecret /root/jwt.hex
+      --cache 2048
+      --syncmode snap
+    deploy:
+      resources:
+        limits:
+          memory: 16G
+        reservations:
+          memory: 8G
+
+  prysm:
+    image: gcr.io/prysmaticlabs/prysm/beacon-chain:v6.0.1
+    container_name: prysm-sepolia
+    restart: unless-stopped
+    depends_on:
+      - geth
+    ports:
+      - "127.0.0.1:3500:3500"  # HTTP API
+      - "127.0.0.1:4000:4000"  # RPC
+      - "13000:13000"  # P2P TCP
+      - "12000:12000/udp"  # P2P UDP
+    volumes:
+      - ./data/prysm:/data
+      - ./data/jwt.hex:/root/jwt.hex
+    command: >
+      --datadir=/data
+      --sepolia
+      --execution-endpoint=http://geth:8551
+      --rpc-host=0.0.0.0
+      --rpc-port=4000
+      --grpc-gateway-host=0.0.0.0
+      --grpc-gateway-port=3500
+      --jwt-secret=/root/jwt.hex
+      --genesis-beacon-api-url=https://sepolia.checkpoint-sync.ethpandaops.io
+      --checkpoint-sync-url=https://sepolia.checkpoint-sync.ethpandaops.io
+      --accept-terms-of-use
+      --http-modules=beacon,config,node
+      --min-sync-peers=1
+    deploy:
+      resources:
+        limits:
+          memory: 10G
+        reservations:
+          memory: 6G
+
+volumes:
+  geth-sepolia:
+  prysm:
