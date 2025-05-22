@@ -6,8 +6,8 @@ This repository provides **two different approaches** for running an Ethereum Se
 
 ## Available Methods
 
-### Method 1: Systemd + UFW (Native)
-### Method 2: Docker Compose + Nginx + Certbot (Containerized)
+### Method 1: Systemd + UFW (Native) -> [Here](https://github.com/starfrich/eth-beacon-sepolia/tree/main/systemd)
+### Method 2: Docker Compose + Nginx + Certbot (Containerized) -> [Here](https://github.com/starfrich/eth-beacon-sepolia/tree/main/docker) 
 
 ## Comparison
 
