@@ -208,29 +208,25 @@ All blockchain data is persisted in the `./data` directory:
 
 ## Usage Examples
 
-### Direct Access (Local)
-```bash
-# Check Geth sync status
-curl -X POST -H "Content-Type: application/json" \
-  --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' \
-  http://localhost:8545
 
-# Check latest block
-curl -X POST -H "Content-Type: application/json" \
-  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' \
-  http://localhost:8545
+### Check Sync Status GETH
+```bash
+curl -s -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' \
+-H "Content-Type: application/json" https://yourdomain.com | jq
 ```
 
-### Through Nginx Proxy (Remote)
-```bash
-# Using your domain with SSL
-curl -X POST -H "Content-Type: application/json" \
-  --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' \
-  https://your.domain.com
+Output your GETH is synced:
 
-# Check beacon chain status
-curl https://your.domain.com/beacon/eth/v1/node/health
+![Image](https://github.com/user-attachments/assets/20a6eadb-9beb-4d1a-9cf7-751dc3359f54)
+
+### Check Sync Status Prysm
+```bash
+curl -s https://yourdomain.com/eth/v1/node/syncing | jq
 ```
+
+Output your Prysm is synced:
+
+![Image](https://github.com/user-attachments/assets/672ea81d-f8cc-4734-a27f-f6ab976bad54)
 
 ## Monitoring and Maintenance
 
