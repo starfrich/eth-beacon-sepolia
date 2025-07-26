@@ -32,8 +32,8 @@ This repository provides **two different approaches** for running an Ethereum Se
 
 ## Choose Based On
 
-**Systemd** → Simple setup, don't mind high memory usage, local access only
-**Docker** → Better resource management, professional deployment, external HTTPS access
+**Systemd** → Simple setup, don't mind high memory usage.
+**Docker** → Better resource management, professional deployment, external HTTPS access.
 
 ## Prerequisites
 - Ubuntu/Debian system

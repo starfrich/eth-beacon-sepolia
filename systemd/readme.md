@@ -21,19 +21,6 @@ If you need to purchase a dedicated server, here are some recommended providers:
 
 ---
 
-## RPC
-
-Most free RPC services have limitations but don’t worry, we’ve got you covered. We have few packages for rent starts from $15/week, DM me on Telegram: [starfish](https://t.me/starfishprerich) or [robapuros](https://t.me/Robapuros) and we’ll work something out.
- 
-> Current availability: **2 IPs left**
-
-> Once the all slots are filled, you’ll need to wait **3–7 days** for the next available RPC. 
-
-> 📌 **First Come, First Served** — no booking system. 
-
-
----
-
 ## 1. Installing Dependencies
 First, we need to install all the necessary system packages and dependencies:
 
